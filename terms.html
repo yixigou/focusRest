@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FocusRest 服务条款 · Terms of Service</title>
+<style>
+  :root {
+    --bg: #fbfdfc; --bg-soft: #f2f8f5; --text: #1d2b26; --secondary: #5c6f68;
+    --faint: #8aa099; --mint: #2e8b76; --hairline: #e2ebe7; --card: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121815; --bg-soft: #171f1b; --text: #e6ede9; --secondary: #9db0a8;
+      --faint: #7c8f88; --mint: #56c79c; --hairline: #26332d; --card: #1b2320;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15.5px/1.85 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC",
+          "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 双语切换 */
+  html[lang="zh"] .i18n-en, html[lang="en"] .i18n-zh { display: none !important; }
+
+  header {
+    position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--hairline);
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  }
+  .nav { max-width: 1080px; margin: 0 auto; padding: 0 28px; height: 64px; display: flex; align-items: center; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: var(--text); text-decoration: none; }
+  .brand svg { width: 26px; height: 26px; }
+  .spacer { flex: 1; }
+  .lang-switch { display: flex; align-items: center; border: 1px solid var(--hairline); border-radius: 999px; padding: 3px; background: var(--card); }
+  .lang-switch button {
+    appearance: none; border: 0; background: transparent; cursor: pointer;
+    font: 600 12.5px/1 inherit; color: var(--faint); padding: 6px 12px; border-radius: 999px; transition: all .2s;
+  }
+  .lang-switch button.on { background: #47a38f; color: #fff; }
+
+  main { max-width: 680px; margin: 0 auto; padding: 64px 24px 40px; }
+  .kicker { color: #47a38f; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  h1 { font-size: 30px; font-weight: 800; margin: 8px 0 6px; letter-spacing: -.01em; }
+  html[lang="en"] h1, html[lang="en"] h2 { font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif; }
+  .meta { color: var(--faint); font-size: 13.5px; margin-bottom: 44px; }
+  h2 { font-size: 17.5px; font-weight: 700; margin: 38px 0 12px; }
+  ul { padding-left: 22px; margin: 8px 0; }
+  li { margin: 7px 0; }
+  li::marker { color: #47a38f; }
+  .lead {
+    background: color-mix(in srgb, #47a38f 7%, transparent);
+    border: 1px solid var(--hairline); border-radius: 14px;
+    padding: 18px 22px; margin: 0 0 10px;
+  }
+  .ph { color: #b45309; font-weight: 600; }
+  @media (prefers-color-scheme: dark) { .ph { color: #e8a33d; } }
+  .mail { color: #47a38f; font-weight: 600; text-decoration: none; }
+  .mail:hover { text-decoration: underline; }
+  footer { max-width: 680px; margin: 0 auto; padding: 28px 24px 72px; border-top: 1px solid var(--hairline); color: var(--faint); font-size: 13px; display: flex; gap: 22px; flex-wrap: wrap; }
+  footer a { color: var(--secondary); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <circle cx="14" cy="14" r="12.2" stroke="#47a38f" stroke-width="2.1"/>
+        <path d="M14 20.6c-3.4-1.2-5.2-4-5.2-7.4 3.6 0 6.6 1.3 8 3.8.6-3.2-.8-6.6-3.6-8.6 4.6.4 7.4 3.6 7.4 7.6 0 2.8-2 5-6.6 4.6z" fill="#47a38f"/>
+      </svg>
+      FocusRest
+    </a>
+    <span class="spacer"></span>
+    <div class="lang-switch" role="group" aria-label="Language / 语言">
+      <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ 中文 ============ -->
+  <div class="i18n-zh">
+    <div class="kicker">FocusRest</div>
+    <h1>服务条款</h1>
+    <div class="meta">生效日期：2026 年 11 月 21 日</div>
+
+    <p class="lead">使用 FocusRest（下称「本应用」）即表示你同意以下条款。本应用为 macOS 菜单栏休息提醒工具，
+    基础功能免费，高级功能（FocusRest Pro）通过 App Store 内购物订阅或买断解锁。</p>
+
+    <h2>一、许可范围</h2>
+    <p>我们授予你个人的、非独占的、不可转让的许可，在符合 Apple App Store 服务条款及标准许可最终使用协议（EULA）的前提下，在你拥有或控制的 Mac 设备上使用本应用。</p>
+
+    <h2>二、付费方案</h2>
+    <ul>
+      <li><strong>月付订阅 / 年付订阅</strong>：自动续费订阅，按月或按年向你的 Apple Account 收费；</li>
+      <li><strong>终身买断</strong>：一次性付费，在当前大版本周期内永久解锁 Pro 功能；</li>
+      <li><strong>免费试用</strong>：月付与年付订阅提供「前 7 天免费」的 App Store 推介优惠，仅对符合条件的新用户开放，资格与展示以 App Store 支付页面为准；试用结束后将自动按所选档位全价续费，除非在试用期结束前取消。</li>
+    </ul>
+    <p>所有价格以你所在地区的 App Store 展示为准。价格调整不影响你已生效的订阅周期。</p>
+
+    <h2>三、订阅的取消与退款</h2>
+    <ul>
+      <li>订阅到期前可随时取消：打开 Mac 的「App Store 账户设置」，找到对应订阅并关闭自动续费；取消后当前周期结束即停止扣费，Pro 功能用至当期结束；</li>
+      <li>退款申请需通过 Apple 提交（报告问题：reportaproblem.apple.com），退款由 Apple 独立决定并处理，与开发者无关；</li>
+      <li>订阅到期、被退款或被撤销后，本应用将自动降级为免费版。</li>
+    </ul>
+
+    <h2>四、Pro 功能与设置数据</h2>
+    <p>Pro 授权失效（试用结束、订阅到期、退款等）后，为保持免费版行为一致，应用内由 Pro 管理的高级设置项将恢复为默认值；重新购买后将从默认配置开始。你的免费版基础数据不受影响。全部数据均保存在你的 Mac 本机，详见《隐私政策》。</p>
+
+    <h2>五、恢复购买</h2>
+    <p>更换 Mac 或重新安装后，可在应用内通过「恢复购买」用同一 Apple Account 找回已购授权。</p>
+
+    <h2>六、健康提示与免责声明</h2>
+    <ul>
+      <li>本应用仅提供休息提醒，属于效率工具，<strong>不构成任何医疗建议</strong>；眼睛、颈椎或其他身体持续不适，请及时就医；</li>
+      <li>休息提醒受系统权限、通知设置与设备状态影响，我们不保证提醒在任何情况下都不缺席、不延迟；</li>
+      <li>在法律允许的范围内，本应用按「现状」提供，不作任何明示或默示担保；开发者对因使用或无法使用本应用造成的间接损害不承担责任。</li>
+    </ul>
+
+    <h2>七、服务变更与终止</h2>
+    <p>我们可能更新或停止分发本应用及部分功能；已付费且在有效期内的授权将在合理期限内继续可用或按平台规则处理。持续使用即代表接受更新后的条款。</p>
+
+    <h2>八、法律适用与联系</h2>
+    <p>本条款适用 <span class="ph">【司法辖区】</span> 法律。如有疑问请联系
+    MEIHONG DING：<a class="mail" href="mailto:yixigou@163.com">yixigou@163.com</a></p>
+  </div>
+
+  <!-- ============ English ============ -->
+  <div class="i18n-en">
+    <div class="kicker">FocusRest</div>
+    <h1>Terms of Service</h1>
+    <div class="meta">Effective: November 21, 2026</div>
+
+    <p class="lead">By using FocusRest (the "App"), a macOS menu-bar break-reminder tool, you agree to these terms.
+    Core features are free; advanced features (FocusRest Pro) are unlocked via App Store subscriptions or a one-time purchase.</p>
+
+    <h2>1. License</h2>
+    <p>You are granted a personal, non-exclusive, non-transferable license to use the App on devices you own or control, subject to the Apple App Store Terms of Service and Apple's Standard License Agreement (EULA).</p>
+
+    <h2>2. Paid plans</h2>
+    <ul>
+      <li><strong>Monthly / Annual subscription</strong>: auto-renewing; charged to your Apple Account monthly or annually;</li>
+      <li><strong>Lifetime purchase</strong>: a one-time payment that unlocks Pro features for the current major version cycle;</li>
+      <li><strong>Free trial</strong>: the monthly and annual subscriptions offer an App Store introductory offer of "first 7 days free," available only to eligible new customers; eligibility and terms are shown on the App Store purchase screen. Unless canceled before the trial ends, the subscription automatically renews at the full plan price.</li>
+    </ul>
+    <p>All prices are as displayed in your local App Store. Price changes do not affect an already-active subscription period.</p>
+
+    <h2>3. Cancellation and refunds</h2>
+    <ul>
+      <li>Cancel anytime before renewal in your Mac's App Store account settings; auto-renewal stops and Pro remains active until the end of the current period;</li>
+      <li>Refund requests are handled solely by Apple (reportaproblem.apple.com); the developer does not control refund decisions;</li>
+      <li>When a subscription expires, is refunded, or is revoked, the App automatically reverts to the free version.</li>
+    </ul>
+
+    <h2>4. Pro features and settings data</h2>
+    <p>When Pro access lapses (trial ends, subscription expires, refund, etc.), advanced settings managed by Pro are reset to their defaults to keep free-version behavior consistent; if you purchase again, you start from default settings. Your free-tier data is unaffected. All data stays on your Mac — see the Privacy Policy.</p>
+
+    <h2>5. Restore purchases</h2>
+    <p>On a new or reinstalled Mac, use "Restore Purchases" in the App to recover entitlements tied to the same Apple Account.</p>
+
+    <h2>6. Health notice and disclaimer</h2>
+    <ul>
+      <li>The App provides break reminders only. It is a productivity tool and <strong>is not medical advice</strong>; consult a professional for persistent eye, neck, or other discomfort;</li>
+      <li>Reminders depend on system permissions, notification settings, and device state; no-omission or no-delay delivery is not guaranteed;</li>
+      <li>To the fullest extent permitted by law, the App is provided "as is" without warranties of any kind, and the developer is not liable for indirect damages arising from use or inability to use the App.</li>
+    </ul>
+
+    <h2>7. Changes and termination</h2>
+    <p>We may update or discontinue the App or parts of it; valid, paid entitlements remain available for a reasonable period or are handled per platform rules. Continued use means acceptance of updated terms.</p>
+
+    <h2>8. Governing law and contact</h2>
+    <p>These terms are governed by the laws of <span class="ph">【Jurisdiction】</span>. Questions? Contact
+    MEIHONG DING at <a class="mail" href="mailto:yixigou@163.com">yixigou@163.com</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <a href="index.html"><span class="i18n-zh">← 返回首页</span><span class="i18n-en">← Home</span></a>
+  <a href="privacy.html"><span class="i18n-zh">隐私政策</span><span class="i18n-en">Privacy Policy</span></a>
+  <span class="spacer"></span>
+  <span>© 2026 MEIHONG DING · FocusRest</span>
+</footer>
+
+<script>
+  function setLang(l) {
+    document.documentElement.lang = l;
+    try { localStorage.setItem("focusrest-site-lang", l); } catch (e) {}
+    syncSwitch();
+  }
+  function syncSwitch() {
+    var l = document.documentElement.lang === "en" ? "en" : "zh";
+    document.getElementById("btn-zh").classList.toggle("on", l === "zh");
+    document.getElementById("btn-en").classList.toggle("on", l === "en");
+  }
+  (function init() {
+    var saved = null;
+    // URL 参数 ?lang=zh|en 优先，其次上次选择，最后跟随系统语言
+    var q = (location.search.match(/[?&]lang=(zh|en)/) || [])[1];
+    if (q) saved = q;
+    if (!saved) { try { saved = localStorage.getItem("focusrest-site-lang"); } catch (e) {} }
+    if (!saved) saved = (navigator.language || "zh").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+    document.documentElement.lang = saved;
+    syncSwitch();
+  })();
+</script>
+</body>
+</html>
