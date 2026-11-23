@@ -1,0 +1,43 @@
+/* 三个页面共用的语言切换器与截图显隐样式（颜色取自各页 CSS 变量） */
+
+.lang-switch { position: relative; }
+.lang-btn {
+  display: flex; align-items: center; gap: 7px; appearance: none; cursor: pointer;
+  font: 600 12.5px/1 inherit; color: var(--text);
+  background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 999px; padding: 7px 12px; transition: box-shadow .2s, border-color .2s;
+}
+.lang-btn:hover { border-color: var(--mint); }
+.lang-caret { width: 10px; height: 10px; stroke: currentColor; fill: none; stroke-width: 2; opacity: .55; transition: transform .2s; }
+.lang-switch.open .lang-caret { transform: rotate(180deg); }
+
+.lang-menu {
+  position: absolute; right: 0; top: calc(100% + 8px); z-index: 60; min-width: 148px; margin: 0; padding: 6px;
+  list-style: none; background: var(--card); border: 1px solid var(--hairline); border-radius: 14px;
+  box-shadow: 0 18px 50px -18px rgba(29, 60, 48, .35);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .18s, transform .18s, visibility .18s;
+}
+.lang-switch.open .lang-menu { opacity: 1; visibility: visible; transform: none; }
+.lang-menu li { margin: 0; }
+.lang-menu button {
+  display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 10px;
+  appearance: none; border: 0; background: transparent; cursor: pointer; text-align: left;
+  font: 500 13.5px/1 inherit; color: var(--text); padding: 8px 10px; border-radius: 9px; transition: background .15s;
+}
+.lang-menu button:hover { background: color-mix(in srgb, var(--mint) 12%, transparent); }
+.lang-menu button.on { color: var(--mint); font-weight: 700; }
+.lang-menu button.on::after { content: "✓"; }
+
+/* 截图语言：简体中文显示 cn-*，其余语言显示 en-*（App 无各语种截图，回退英文界面图） */
+html:not([lang="zh-Hans"]) [data-lang-img="zh"] { display: none !important; }
+html[lang="zh-Hans"] [data-lang-img="en"] { display: none !important; }
+
+/* 拉丁语系改用 SF Pro 标题字体（与原有 en 规则一致，扩展到 de / es） */
+html:lang(en) h1, html:lang(de) h1, html:lang(es) h1,
+html:lang(en) h2, html:lang(de) h2, html:lang(es) h2 {
+  font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+}
+html:lang(en) body, html:lang(de) body, html:lang(es) body {
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
